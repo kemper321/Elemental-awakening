@@ -1,0 +1,73 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Elemental Battleground Hub, Made by Xxginger_slayrxx", "Serpent")
+
+--Main
+local Auto = Window:NewTab("Auto Farm")
+local AutoSection = Auto:NewSection("Go KYS")
+
+-- Auto Buttons
+
+AutoSection:NewButton("Auto Farm", "Auto farms exp, I suggest using anti-afk along with it.", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aidez/elemental_awakening/main/level_farm'),true))()
+end)
+
+AutoSection:NewButton("Auto Spin", "Spins elements until reached desired rarity(Not recomended).", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/VDxJqRj5'),true))()
+end)
+
+AutoSection:NewButton("Curse Grabber", "Grabs curses. Duh.", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aidez/elemental_awakening/main/curse_auto_grab'),true))()
+end)
+
+--Auto Toggles
+
+
+--Auto Sliders
+
+
+
+
+
+--Misc Tab
+local Misc = Window:NewTab("Miscellaneous")
+local MiscSection = Misc:NewSection("Fuck me in the ASS! please.")
+
+--Misc Buttons
+MiscSection:NewButton("Infinite Yiff", "Loads the FE command script know as Infinite Yield", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+MiscSection:NewButton("Click TP", "Hold left control and click to TP.", function()
+    local UIS = game:GetService("UserInputService")
+
+    local Player = game.Players.LocalPlayer
+    local Mouse = Player:GetMouse()
+    
+    
+    function GetCharacter()
+       return game.Players.LocalPlayer.Character
+    end
+    
+    function Teleport(pos)
+       local Char = GetCharacter()
+       if Char then
+           Char:MoveTo(pos)
+       end
+    end
+    
+    
+    UIS.InputBegan:Connect(function(input)
+       if input.UserInputType == Enum.UserInputType.MouseButton1 and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
+           Teleport(Mouse.Hit.p)
+       end
+    end)
+end)
+
+MiscSection:NewKeybind("Gui Toggle", "Toggle with R", Enum.KeyCode.R, function()
+	Library:ToggleUI()
+end)
+
+--Misc Toggles
+
+
+--Misc Slider
