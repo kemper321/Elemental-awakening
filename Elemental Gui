@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Elemental Battleground Hub, Made by Xxginger_slayrxx", "Serpent")
+local Window = Library.CreateLib("Elemental Battleground Hub, Made by Xxginger_slayrxx", "Ocean")
 
 --Main
 local Auto = Window:NewTab("Auto Farm")
@@ -11,19 +11,20 @@ AutoSection:NewButton("Auto Farm", "Auto farms exp, I suggest using anti-afk alo
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aidez/elemental_awakening/main/level_farm'),true))()
 end)
 
-AutoSection:NewButton("Auto Spin", "Spins elements until reached desired rarity(Not recomended).", function()
-    loadstring(game:HttpGet(('https://pastebin.com/raw/VDxJqRj5'),true))()
-end)
-
 AutoSection:NewButton("Curse Grabber", "Grabs curses. Duh.", function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aidez/elemental_awakening/main/curse_auto_grab'),true))()
 end)
 
+AutoSection:NewButton("Auto Spin", "Spins elements until reached desired rarity(Not recomended).", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/kemper321/Autospin-EA/main/uh'),true))()
+end)
 --Auto Toggles
 
 
 --Auto Sliders
 
+
+--Auto Dropdown
 
 
 
@@ -63,11 +64,34 @@ MiscSection:NewButton("Click TP", "Hold left control and click to TP.", function
     end)
 end)
 
+MiscSection:NewButton("Anti-Afk", "Keeps you from AFK", function()
+    local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+wait(1)
+vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+end)
+
 MiscSection:NewKeybind("Gui Toggle", "Toggle with R", Enum.KeyCode.R, function()
 	Library:ToggleUI()
 end)
+
+
 
 --Misc Toggles
 
 
 --Misc Slider
+
+
+--Misc Dropdown
+
+
+
+
+--Credits
+local Cred = Window:NewTab("Credits")
+local CredSection = Cred:NewSection("Credits to people/person who made the gui")
+
+CredSection:NewLabel("Owner/Made by Xxginger_slayrxX")
